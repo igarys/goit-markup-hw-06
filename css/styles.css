@@ -616,6 +616,7 @@ border: 0;
 margin: auto 0;
 padding-left: 16px;
 color: var(--active-text-color);
+width: 100%;
 }
 .data-form {
   padding: 40px;
@@ -656,6 +657,7 @@ top: 13px;
   margin-block: 3px;
   border: 0;
   outline: 0;
+  width: 90%;
 }
 .comment{
   margin-left: 0;
@@ -673,22 +675,60 @@ top: 13px;
  line-height: 1.71px;
  display: flex;
  align-items: center;
- margin-left: 15px;
+ margin-left: 39px;
  height: 24px;
  margin-bottom: 30px;
  position: relative;
 }
 .checkbox{
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  top: 4px;
+  left: -24px;
+   margin-right: 8px;
+}
+.new-checkbox {
+  position: absolute;
+  top: 4px;
+  left: -24px;
   width: 16px;
   height: 15px;
-  margin-right: 8px;
+
 }
+.checked-box::after{
+ content: " "; 
+ background-color: var(--active-background-color);
+  border-color: var(--active-background-color);
+  border-radius: 2px;
+  position: absolute;
+  left: -24px;
+  top: 3px;
+  width: 17px;
+  height: 16px;
+  cursor: pointer;
+  display: flex;
+  display: none;
+}
+ .checked-svg{
+  position: absolute;
+  left: -21px;
+  top: 7px;
+  z-index: 1;
+/* display: none; */
+}
+
+.checkbox-value input:checked ~ .checked-box:after{
+  display: block;
+}
+/* .checkbox-value input:checked  .checked-svg{
+  display: block;
+} */
 .checkbox-svg{
   width: 16px;
   height: 15px;
-  position: absolute;
-  top: 4px;
-  left: -1px;
+  cursor: pointer; 
 }
 .checkbox:checked{
   background-color: var(--active-background-color);
